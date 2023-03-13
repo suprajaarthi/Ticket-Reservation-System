@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<form id="my-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+
+  <button type="submit">Submit</button>
+<!-- html fragment -->
+<div id="container" style="width: 160px; height: 40px;"></div>
+
+ <button class="gpay-button">
+  <img src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="Google Pay Logo" width="20px">
+  Pay with GPay
+</button>
+<style type="text/css">
+  .gpay-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4285F4;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gpay-button:hover {
+  background-color: #3367D6;
+  cursor: pointer;
+}
+
+</style>
+
+
+<style type="text/css"></style>
+</form>
+
+</body>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+
+<script type="text/javascript">
+
+// javascript fragment
+const container = document.getElementById('container');
+const button = googlePayClient.createButton({
+  buttonType: 'buy',
+  buttonSizeMode: 'fill',
+  onClick: () => {},
+});
+
+container.appendChild(button);
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5gBoIMUbaDn2Glw-s5SRuTFoZ3zhz8AQ",
+    authDomain: "form-91821.firebaseapp.com",
+    databaseURL: "https://form-91821-default-rtdb.firebaseio.com",
+    projectId: "form-91821",
+    storageBucket: "form-91821.appspot.com",
+    messagingSenderId: "908992252495",
+    appId: "1:908992252495:web:b331a9f3f4f0dc1f14f83a",
+    measurementId: "G-LSYVY3HSKV"
+  };
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
+
+
+	var form = document.getElementById('my-form');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  var name = form.elements['name'].value;
+  var email = form.elements['email'].value;
+
+
+  // Store the form data in Firebase
+  database.ref('users').push({
+    name: name,
+    email: email
+  });
+});
+</script>
+</html>

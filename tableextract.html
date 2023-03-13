@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<table id="myTable">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>25</td>
+    <td>Male</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>30</td>
+    <td>Female</td>
+  </tr>
+  <tr>
+    <td>Bob</td>
+    <td>40</td>
+    <td>Male</td>
+  </tr>
+</table>
+
+<label for="rowIndex">Enter Row Index:</label>
+<input type="number" id="rowIndex">
+<button onclick="fetchData()">Fetch Data</button>
+<p id="output"></p>
+
+
+<script>
+  function fetchData() {
+  const rowIndex = document.getElementById("rowIndex").value;
+  const table = document.getElementById("myTable");
+  const name = table.rows[rowIndex].cells[0].innerHTML;
+  const age = table.rows[rowIndex].cells[1].innerHTML;
+  const gender = table.rows[rowIndex].cells[2].innerHTML;
+
+  const output = document.getElementById("output");
+  output.innerHTML = `Name: ${name}, Age: ${age}, Gender: ${gender}`;
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Download HTML as PDF</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Download HTML as PDF</h1>
+	<button onclick="downloadAsPDF()">Download PDF</button>
+
+	<!-- Your HTML content here -->
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut quam nibh. Quisque pulvinar arcu id velit. Aliquam erat volutpat. Ut tincidunt euismod urna, vel sagittis ipsum dapibus eget. </p>
+
+	<!-- Include the jsPDF library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+	<script>
+		function downloadAsPDF() {
+			// Create a new jsPDF instance
+			var doc = new jsPDF();
+
+			// Get the HTML content as a string
+			var html = document.documentElement.outerHTML;
+
+			// Add the HTML content to the PDF
+			doc.fromHTML(html);
+
+			// Download the PDF file
+			doc.save("download.pdf");
+		}
+	</script>
+</body>
+</html>

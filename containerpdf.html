@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Personal Information</h1>
+  </div>
+  <div class="body">
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="id-number">ID Number:</label>
+        <input type="text" id="id-number" name="id-number" required>
+      </div>
+      <div class="form-group">
+        <label for="source">Source:</label>
+        <input type="text" id="source" name="source" required>
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required>
+      </div>
+      <div class="form-group">
+        <button type="button" onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function downloadPDF() {
+  const doc = new jsPDF();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const idNumber = document.getElementById('id-number').value;
+  const source = document.getElementById('source').value;
+  const destination = document.getElementById('destination').value;
+  doc.text(`Name: ${name}`, 10, 10);
+  doc.text(`Email: ${email}`, 10, 20);
+  doc.text(`ID Number: ${idNumber}`, 10, 30);
+  doc.text(`Source: ${source}`, 10, 40);
+  doc.text(`Destination: ${destination}`, 10, 50);
+  doc.save('personal_information.pdf');
+}
+
+
+</script>
+</body>
+</html>
