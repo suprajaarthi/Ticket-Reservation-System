@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
-
 <head>
-    <!-- for-mobile-apps -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Firebase Authentication</title>
+<link rel="stylesheet" href="cssFile.css">
+</head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#25274d">
     <meta name="description" content="A Train seat reservation system ">
@@ -46,20 +46,21 @@
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
     <link href="fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/material-datetimepicker/bootstrap-material-datetimepicker.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/material.min.css">
     <link rel="stylesheet" type="text/css" href="plugins/lobibox/css/lobibox.min.css">
     <link rel="stylesheet" type="text/css" href="css/simplelightbox.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- end of css -->
-</head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark static-top">
+
+
+     <nav class="navbar navbar-expand-lg navbar-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <h1>
-                    <img src="images/p1.png" alt="logo" width="30" height="30" style="margin-top: -10px">
+                    <img src="images/p1.png" alt="logo" width="120" height="55" style="margin-top: -10px">
                     <span>T</span>
                     <span>R</span>
                     <span>A</span>
@@ -79,10 +80,10 @@
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <button class="btn btn-outline-warning my-2 my-sm-0 ml-3" type="submit">Login</button>
+                        <a href="index.html"><button class="btn btn-outline-warning my-2 my-sm-0 ml-3" type="submit">Login</button></a>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-outline-warning my-2 my-sm-0 ml-2" type="submit">Sign Up</button>
+                        <a href="index.html"> <button class="btn btn-outline-warning my-2 my-sm-0 ml-2" type="submit">Sign Up</button></a>
                     </li>
                     <!-- <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -91,622 +92,358 @@
             </div>
         </div>
     </nav>
-    <!-- </navbar -->
-    <!-- main content -->
-    <main class="col-md-12">
-        <div class="col-md-11 col-lg-9 col-xl-8 mx-auto window">
-            <section class="stepper">
-                <!-- progressbar -->
-                <ul id="progressbar" style="padding-inline-start:8px;">
-                    <li class="active">Travel Date</li>
-                    <li>Available Trains</li>
-                    <li>Book Seat</li>
-                    <li>Details</li>
-                    <li>Payment</li>
-                    <li>Ticket</li>
+    
+    
+  <main class="col-md-12">
+        <div class="col-md-11 col-ls-9 mx-auto window">
+       <section  class="stepper">
+                <ul  style="display: flex;justify-content: center" id="progressbar" style="padding-inline-start:17px;">
+                    <a href="firstpage.html"> <li>Passenger Details </li> </a>
+                    <a href="availabletrain.html"> <li> Train Details &nbsp; &nbsp; &nbsp;</li> </a>
+                    <a href="fetch.html"> <li> Ticket Details &nbsp; &nbsp; &nbsp; </li> </a>
                 </ul>
-            </section>
-            <section class="body">
-                <form id="date_form">
-                    <fieldset class="animated fadeIn">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>From</label>
-                                <select class="form-control from " name="from" required>
-                                    <option disabled>--PickUp Point--</option>
-                                    <option value="Chennai">Chennai</option>
-                                    <option value="Coimbatore">Coimbatore</option>
-                                    <option value="Madurai">Madurai</option>
-                                      <option value="Salem">Salem</option>
-                                    <option value="Tirunelveli">Triunelveli</option> 
-                                     <option value="Dindugal">Dindugal</option>
-                                    
+            </section> 
+            <div id="login-box">
+  <div class="left">
+    <h3 > Sign up </h3>
+        <input type="text" id="username" name="username" placeholder="Username" />
+    <input type="text" id="email" name="email" placeholder="E-mail" />
+    <input type="password" id="password" name="password" placeholder="Password" />
+    
+    <input type="submit" id='sighUp' name="signup_submit" value="Signup" />
 
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>To</label>
- <select class="form-control from " name="from" required>
-                                    <option disabled>--Destination Point--</option>
-                                    <option value="Coimbatore">Coimbatore</option>
-                                    <option value="Chennai">Chennai</option>
-                                    <option value="Madurai">Madurai</option>
-                                      <option value="Salem">Salem</option>
-                                    <option value="Tirunelveli">Triunelveli</option> 
-                                     <option value="Dindugal">Dindugal</option>
-                                    
+  </div>
+  
+  <div class="right">
 
-                                </select>
-                                                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Date of travel</label>
-                                <input type="text" class="form-control" id="date" name="date" placeholder="2023-03-04">
-                            </div>
-                             <div class="form-group col-md-6">
-                                <label>Standard Price</label>
-                                <input type="text" class="form-control" id="price" name="price" value="1000" readonly>
-                            </div> 
-                            <div class="form-group col-md-4 ">
-                                <label>Time</label>
-                                <select class="form-control time " name="time " required>
-                                            <option disabled>--Time--</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="22:00 ">22:00</option>
-                                        </select>
-                            </div> 
-                        </div>
-                        <div class="row justify-content-center buttons">
-                            <button type="button" class="btn next_button">Continue</button>
-                        </div>
-                    </fieldset>
-                    <fieldset class="animated fadeIn">
-                        <div id="results">
-                            <!-- <h6>3 buses found</h6> -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3 bus-image">
-                                                    <img src="images/p2.png" alt="bus" height="130" width="130">
-                                                </div>
-                                                <div class="col-md-8 bus-details">
-                                                    <h5 class="card-title bus-name">KCD 452G (<span class="bus-type fs-13">Pandiyan Express</span>)</h5>
-                                                    <div class="row card-text m-b-10 bus-description">
-                                                        <div class="col-sm-6 fs-14">
-                                                            <i class="material-icons" style="font-size: 13px;">watch</i> Departure: <span class="p-r-5 fr">20:30hr </span>
-                                                        </div>
-                                                        <div class="col-sm-6 fs-14">
-                                                            <i class="fa fa-road"></i> Route:
-                                                            <span class="p-r-5 fr"><span class="from"></span> - <span class="to"></span>Madurai </span>
-                                                        </div>
-                                                        <div class="col-sm-6 fs-14">
-                                                            <i class="material-icons" style="font-size: 13px;">event_seat</i> Availability:
-                                                            <span class="p-r-5 fr"><span class="seats-left">32</span> seats left </span>
-                                                        </div>
-                                                        <div class="col-sm-6 fs-14">
-                                                            <i class="fa fa-money"></i> Fare:
-                                                            <span class="p-r-5 fr">3000 Rs </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-t-13">
-                                                        <a href="#" class="btn btn-circle btn-success book_btn" data-bus="1">Book Seats</a>
-                                                        <a href="#" class="fr p-t-13 g-link">View Gallery</a>
-                                                        <div class="gallery1" style="display: none;">
-                                                            <a href="gallery/majaoni1.jpg">
-                                                                <img src="gallery/majaoni1.jpg" alt="" title="Majaoni Secondary Bus" />
-                                                            </a>
-                                                            <a href="gallery/majaoni2.jpg">
-                                                                <img src="gallery/majaoni2.jpg" alt="" title="Majaoni Secondary Bus" />
-                                                            </a>
-                                                            <a href="gallery/majaoni3.jpg">
-                                                                <img src="gallery/majaoni3.jpg" alt="" title="Majaoni Secondary Bus" />
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-3 bus-image">
-                                                        <img src="images/p.png" alt="bus" height="130" width="130">
-                                                    </div>
-                                                    <div class="col-md-8 bus-details">
-                                                        <h5 class="card-title bus-name">KCP 578X (<span class="bus-type">Brindavan </span> Express)</h5>
-                                                        <div class="row card-text m-b-10 bus-description">
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="material-icons" style="font-size: 13px;">watch</i> Departure: <span class="p-r-5 fr">20:30hr </span>
-                                                            </div>
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="fa fa-road"></i> Route:
-                                                                <span class="p-r-5 fr">Chennai - Bangalore </span>
-                                                            </div>
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="material-icons" style="font-size: 13px;">event_seat</i> Availability:
-                                                                <span class="p-r-5 fr">0 seats left </span>
-                                                            </div>
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="fa fa-money"></i> Fare:
-                                                                <span class="p-r-5 fr">1400 Rs </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-t-13">
-                                                            <a href="#" class="btn btn-circle btn-success disabled book_btn">Book Seats</a>
-                                                            <a href="#" class="fr p-t-10">View Gallery</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-3 bus-image">
-                                                        <img src="images/p3.png" alt="bus" height="130" width="130">
-                                                    </div>
-                                                    <div class="col-md-8 bus-details">
-                                                        <h5 class="card-title bus-name">KCK 122Y (<span class="bus-type">Intercity</span> Express)</h5>
-                                                        <div class="row card-text m-b-10 bus-description">
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="material-icons" style="font-size: 13px;">watch</i> Departure: <span class="p-r-5 fr">21:30hr </span>
-                                                            </div>
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="fa fa-road"></i> Route:
-                                                                <span class="p-r-5 fr">Nairobi - Mombasa </span>
-                                                            </div>
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="material-icons" style="font-size: 13px;">event_seat</i> Availability:
-                                                                <span class="p-r-5 fr">0 seats left </span>
-                                                            </div>
-                                                            <div class="col-md-6 fs-14">
-                                                                <i class="fa fa-money"></i> Fare:
-                                                                <span class="p-r-5 fr">1200 Rs </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-t-13">
-                                                            <a href="javascript:void(0);" 
-                                                           class="btn btn-circle btn-success disabled book_btn">Book Seats</a>
-                                                            <a href="#" class="fr p-t-10">View Gallery</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center buttons">
-                            <button type="button " class="btn previous_button">Back</button>
-                        </div>
-                    </fieldset>
-                    <!-- seat map -->
-                    <fieldset class="animated fadeIn">
-                        <div id="seats">
-                            <div class="row no-gutters">
-                                <div class="col-lg-8 col-xl-6 col-sm-8 col-md-7">
-                                    <div id="seat-map">
-                                        <div class="front-indicator">
-                                            <img src="images/driver.png" alt="Driver" height="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-6 col-sm-4 col-md-5">
-                                    <div class="booking-details">
-                                        <h2 class="header">Booking Details
-                                            <span class="number_plate badge badge-primary fs-12"></span></h2>
-                                        <h3> Selected Seats <span id="counter">0</span>:</h3>
-                                        <ul id="selected-seats">
-                                        </ul>
-                                        <p>Total: <b><span id="total">0</span> Rs</b></p>
-                                        <br>
-                                    </div>
-                                    <!-- <div id="legend" class=""></div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center buttons ">
-                            <button type="button " class="btn previous_button">Back</button>
-                            <button type="button " class="btn next_button btn-booked">Continue</button>
-                        </div>
-                    </fieldset>
-                    <!-- END SEAT MAP -->
-                    <!-- PERSONAL INFO -->
-                    <fieldset class="animated fadeIn p-info">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="name">Full Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Aravind" onkeyup="verifyInfoForm()" id="name">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="id">Adhar Number</label>
-                                <input type="text" class="form-control" name="id" placeholder="631890872134" onkeyup="verifyInfoForm()" id="id">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="phone">Mobile No.</label>
-                                <input type="text" class="form-control" id="phone" name="phone" id="phone" placeholder="0712345678" onkeyup="verifyInfoForm()">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="aravind@gmail.com" onkeyup="verifyInfoForm()">
-                            </div>
-                        </div>
-                        <div class="row justify-content-center buttons">
-                            <button type="button " class="btn previous_button">Back</button>
-                            <button type="button " class="btn next_button">Continue</button>
-                        </div>
-                    </fieldset>
-                    <!-- END PERSONAL INFO -->
-                    <!-- PAYMENT -->
-                    <fieldset class="animated fadeIn p-info">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-10">
-                                <h6>
-                                    Please send your money to <b>0717456520 Peter Lemaron</b>.
-                                    A Printable PDF ticket will be sent to your email (<span class="show-email"></span>) upon payment completion. So please ensure you provide a valid email address. <br><br>
-                                    <span class="note">Note: If you havent made a deposit by 3 days your reservation will be cancelled.</span>
-                                </h6>
-                            </div>
-                        </div>
+   <h3 id='status'>Login</h3>
+    <input type="text" id="email" name="email" placeholder="E-mail" />
+    <input type="password" id="password1" name="password" placeholder="Password" />
+    
+    <input type="submit" id='login' name="login" value="Login" />
 
-                        <div class="row justify-content-center buttons">
-                            <button type="button " class="btn previous_button">Back</button>
-                            <button type="button " class="btn next_button">Finish</button>
-                        </div>
-                    </fieldset>
-                    <!-- END PAYMENT -->
-                    <!-- TICKET -->
-                    <fieldset class="animated fadeIn p-info">
+     <input type="submit" id='logout' name="logout" value="Logout" />
 
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-3" style="margin: auto;left: 0;top: 0;">
-                                <img src="booked.png" alt="Success" class="img-fluid p-b-10">
-                            </div>
-                            <div class="col-md-8">
-                                <h6>
-                                    An email has been sent to your email address (<span class="show-email"></span>). Don't forget to look in your spam folder. Safe Journey <i class="fa fa-heart text-danger"></i>.<br><br>
-                                    <span class="note">Note: If you havent made a deposit by  days your reservation will be cancelled.</span>
-                                </h6>
-                            </div>
-                        </div>
+  </div>
+  <div class="or">OR</div>
 
-                        <div class="row justify-content-center buttons">
-                            <button type="button " class="btn previous_button">Back</button>
-                        </div>
-                    </fieldset>
-                    <!-- END TICKET -->
-                </form>
-            </section>
+</div>
+
         </div>
     </main>
+
 </body>
 
-</html>
-<!-- javascript -->
-<script type="text/javascript " src="js/jquery.min.js "></script>
-<script type="text/javascript " src="js/popper.min.js "></script>
-<script type="text/javascript " src="js/bootstrap.min.js "></script>
-<script type="text/javascript " src="js/bootstrapValidator.js"></script>
-<script type="text/javascript " src="js/jquery-easing.min.js "></script>
-<script type="text/javascript " src="js/jquery.nice-select.js "></script>
-<script type="text/javascript " src="js/jquery.seat-charts.js "></script>
-<script src="plugins/material-datetimepicker/moment-with-locales.min.js "></script>
-<script src="plugins/material-datetimepicker/bootstrap-material-datetimepicker.js "></script>
-<script src="plugins/material-datetimepicker/datetimepicker.js "></script>
-<script type="text/javascript" src="js/simple-lightbox.min.js"></script>
-<script type="text/javascript" src="plugins/lobibox/js/lobibox.min.js"></script>
-<script type="text/javascript " src="js/script.js "></script>
-<script type="text/javascript">
-$('select').niceSelect();
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-$('.g-link').on('click', function(event) {
-    $('.gallery1 a').trigger('click')
-});
-
-var $gallery = $('.gallery1 a').simpleLightbox();
-
-//jQuery time
-var current_fs, next_fs, previous_fs, busId=0,seatsArray = []; //fieldsets
-var left, opacity, scale; //fieldset properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
-
-
-$(".next_button").on('click', function(event) {
-
-    if (animating) return false;
-    animating = true;
-
-    current_fs = $(this).parent().parent();
-    next_fs = current_fs.next();
-
-    if ($("fieldset").index(next_fs) == 1) {
-        $('span.from').text($('select.from').val());
-        $('span.to').text($('input.to').val());
-        $.ajax({
-            method: 'GET', //https://examinationcomplaint.theschemaqhigh.co.ke/HCI/api/book/
-            url: 'https://examinationcomplaint.theschemaqhigh.co.ke/HCI/api/book/?bus_id=1&booked_seats',
-            success: function (data) {
-                $('span.seats-left').text(51 - data.length);
-            },
-            error: function (data) {
-                console.log(data)
-            }
-        });
-
-    }
-
-    if ($("fieldset").index(current_fs) == 2) {
-        if ($('ul#selected-seats li').length == 0) {
-            animating = false;
-            Lobibox.notify('error', {
-                showClass: 'fadeInDown',
-                hideClass: 'fadeUpDown',
-                iconSource: 'fontAwesome',
-                // img: 'images/logo-96.png',
-                title: "No Seat Selected!",
-                continueDelayOnInactiveTab: true,
-                size: 'mini',
-                msg: 'Please select at least one seat from the selected bus.'
-            });
-
-        } else {
-            goNext(next_fs, current_fs)
-            seatsArray.splice(0,seatsArray.length);
-            sc.find('selected').each(function() {
-                seatsArray.push(this.settings.label)
-            });
-        }
-    } else if ($("fieldset").index(current_fs) == 3) {
-        animating = false;
-        if (!verifyInfoForm()) {
-
-        } else {
-            goNext(next_fs, current_fs)
-            $('span.show-email').text($('input[name="email"]').val());
-        }
-    } else {
-        goNext(next_fs, current_fs)
-        if ($("fieldset").index(next_fs) == 5) {
-            $data = {
-                'busId' : busId,
-                'seats' : seatsArray.toString(),
-                'personalInfo' : $('form').serializeArray()
-            }
-            $data = JSON.stringify($data)
-            console.log($data);
-            $.ajax({
-                method: 'POST',//https://examinationcomplaint.theschemaqhigh.co.ke/HCI/api/book/
-                url: 'api/book.php',
-                data: $data,
-                dataType: 'json',
-                success: function (data) {
-                    console.log(data)
-                },
-                error: function (data) {
-                    console.log(data)
-                }
-            });
-        }
-    }
+import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 
 
-    //     let date = $('#date').val();
-    //     let regexp = /^(\d{4})[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
-    //     if (!regexp.test(date)) return 0;
-    // }
+  const firebaseConfig = {
+ apiKey: "AIzaSyA8BtYSRJ-nzEKEUZXbnwYrycE5RDO-weM",
+  authDomain: "staffaccess-30df8.firebaseapp.com",
+  projectId: "staffaccess-30df8",
+  storageBucket: "staffaccess-30df8.appspot.com",
+  messagingSenderId: "726139754345",
+  appId: "1:726139754345:web:71dce6ca836960498d0ff8"
+};
 
-    //go to next fs
-    // $(".next_button").unbind('click',goNext(next_fs, current_fs));
+var passwordval;
 
-});
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  var  auth = getAuth(app);
 
+sighUp.addEventListener('click',(e) => {
 
-$(".book_btn").click(function() {
-    busId = Number($(this).data('bus')); //determine which bus was choosen
-    let busName = $(this).parents('.bus-details').children('.bus-name').text();
-    $('span.number_plate').text($(this).parents('.bus-details').children('.bus-name').text())
-    if (animating) return false;
-    animating = true;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  passwordval=password.toString();
+  // console.log(password);+
+  var username = document.getElementById('username').value;
 
-    current_fs = $(this).parents('fieldset');
-    next_fs = current_fs.next();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+     // Signed in 
+      const user = userCredential.user;
+      console.log(user);
+      set(ref(database, 'users/' + user.uid),{
+          username: username,
+          email: email
+      })
 
-    if ($("fieldset").index(next_fs) == 2) {
-        booked_seats(busId);
-        setInterval( booked_seats(busId),3000);
-    }
+      alert('User created!');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-    //de-activate current step on progressbar
-    goNext(next_fs, current_fs)
-
-});
-
-$(".previous_button").click(function() {
-
-    current_fs = $(this).parent().parent();
-
-    previous_fs = current_fs.prev();
-
-    if ($("fieldset").index(previous_fs) == 2) {
-        booked_seats(busId);
-        setInterval( booked_seats(busId),3000);
-    }
-
-    //de-activate current step on progressbar
-    if (previous_fs.length > 0) {
-        if (animating) return false;
-        animating = true;
-        $("#progressbar li ").eq($("fieldset").index(current_fs)).removeClass("active");
-
-        //show the previous fieldset
-        previous_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({
-            opacity: 0
-        }, {
-
-            duration: 100,
-            complete: function() {
-                current_fs.hide();
-                previous_fs.css('opacity', 1);
-                animating = false;
-            },
-            //this comes from the custom easing plugin
-            easing: 'easeInOutBack'
-        });
-    }
-});
-
-function goNext(next_fs, current_fs) {
-    $("#progressbar li ").eq($("fieldset").index(next_fs)).addClass("active");
-    //show the next fieldset
-    next_fs.show();
-
-    current_fs.animate({
-        opacity: 0
-    }, {
-        duration: 10,
-        complete: function() {
-            current_fs.hide();
-            animating = false;
-        },
-        //this comes from the custom easing plugin
-        easing: 'easeInOutBack'
+      alert(errorMessage);
+    // ..
     });
-}
-
-function verifyInfoForm() {
-    let name = $('input[name="name"]'),
-        id = $('input[name="id"]'),
-        phone = $('input[name="phone"]'),
-        email = $('input[name="email"]'),
-        nameRegexp = /^[a-zA-Z]+\s+[a-zA-Z\s]+$/,
-        idRegexp = /^\d{12}$/,
-        emailRegexp = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i,
-        phoneRegexp = /^(0|\+?254)7(\d){8}$/,
-        isValid = []
-    if ($.trim(name.val()) == '') {
-        name.addClass('is-invalid')
-        name.parent().find('small.text-danger').remove()
-        name.parent().append('<small class="text-danger">Name field cannot be empty</small>')
-        isValid['name'] = false;
-    } else if (!nameRegexp.test($.trim(name.val()))) {
-        name.addClass('is-invalid')
-        name.parent().find('small.text-danger').remove()
-        name.parent().append('<small class="text-danger">Full name can only consist of alphabetical and atlest two names.</small>')
-        isValid['name'] = false;
-    } else {
-        name.removeClass('is-invalid')
-        name.addClass('is-valid')
-        name.parent().find('small.text-danger').remove();
-        isValid['name'] = true;
-    }
-
-    // phone no
-
-    if ($.trim(phone.val()) == '') {
-        phone.addClass('is-invalid')
-        phone.parent().find('small.text-danger').remove()
-        phone.parent().append('<small class="text-danger">Phone No field cannot be empty</small>')
-        isValid['phone'] = false;
-    } else if (!phoneRegexp.test($.trim(phone.val()))) {
-        phone.addClass('is-invalid')
-        phone.parent().find('small.text-danger').remove()
-        phone.parent().append('<small class="text-danger">Please provide a valid phone number.</small>')
-        isValid['phone'] = false;
-    } else {
-        phone.removeClass('is-invalid')
-        phone.addClass('is-valid')
-        phone.parent().find('small.text-danger').remove();
-        isValid['phone'] = true;
-    }
-    // id
-    if ($.trim(id.val()) == '') {
-        id.addClass('is-invalid')
-        id.parent().find('small.text-danger').remove()
-        id.parent().append('<small class="text-danger">Id field cannot be empty</small>')
-        isValid['id'] = false;
-    } else if (!idRegexp.test($.trim(id.val()))) {
-        id.addClass('is-invalid')
-        id.parent().find('small.text-danger').remove()
-        id.parent().append('<small class="text-danger">Please provide a valid ID number.</small>')
-        isValid['id'] = false;
-    } else {
-        id.removeClass('is-invalid')
-        id.addClass('is-valid')
-        id.parent().find('small.text-danger').remove();
-        isValid['id'] = true;
-    }
-
-    // email
-    if ($.trim(email.val()) == '') {
-        email.addClass('is-invalid')
-        email.parent().find('small.text-danger').remove()
-        email.parent().append('<small class="text-danger">Email field cannot be empty</small>')
-        isValid['email'] = false;
-    } else if (!emailRegexp.test($.trim(email.val()))) {
-        email.addClass('is-invalid')
-        email.parent().find('small.text-danger').remove()
-        email.parent().append('<small class="text-danger">Please provide a valid email address.</small>')
-        isValid['email'] = false;
-    } else {
-        email.removeClass('is-invalid')
-        email.addClass('is-valid')
-        email.parent().find('small.text-danger').remove();
-        isValid['email'] = true;
-    }
-
-    return Object.values(isValid).every(function (value) {
-        return value == true;
-    });
-}
-
-
-$('#date_form').on('submit', (event) => {
-    event.preventDefault();
-})
-
-$('ul#progressbar').on('click', 'li', function(event) {
-    let i = $('#progressbar li').index(this)
-    let j = $('#progressbar').find('li.active').length - 1
-
-    if (i > j) {
-        if (j == 1) {
-            Lobibox.notify('error', {
-                showClass: 'fadeInDown',
-                hideClass: 'fadeUpDown',
-                iconSource: 'fontAwesome',
-                // img: 'images/logo-96.png',
-                title: "No Train Selected!",
-                continueDelayOnInactiveTab: true,
-                size: 'mini',
-                msg: 'Please select a Train from which you want to book.'
-            });
-        }else{
-            $("fieldset").eq(j).find('.next_button').trigger('click')
-        }
-    }else if (i < j) $("fieldset").eq(j).find('.previous_button').trigger('click')
 
 });
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('service-worker.js')
-            .then(function() {
-                console.log("Service Worker Registered,");
-            });
-    });
-}
+
+  var auth = getAuth(app);
+
+
+ login.addEventListener('click',(e)=>{
+   var email = document.getElementById('email').value;
+   var password1 = document.getElementById('password1').value;
+   password1=password1.toString();
+     console.log(passwordval);
+
+     console.log(password1);
+
+if (passwordval == password1){
+      signInWithEmailAndPassword(auth, email, password1)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        const dt = new Date();
+        console.log(user);
+         update(ref(database, 'users/' + user.uid),{
+          last_login: dt,
+        })
+           alert('User loged in!');
+           location.href ="firstpage.html";
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+  });
+
+ }
+
+ else 
+ {
+  alert("Enter valid password ")
+ }
+ } );
+
+
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    //bla bla bla
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    //bla bla bla
+  }
+});
+
+logout.addEventListener('click',(e)=>{
+
+   signOut(auth).then(() => {
+     // Sign-out successful.
+     alert('user loged out');
+   }).catch((error) => {
+     // An error happened.
+     const errorCode = error.code;
+     const errorMessage = error.message;
+
+        alert(errorMessage);
+   });
+
+});
+
 </script>
-<!-- end of js -->
+
+<style>
+    body {
+    font: normal 75% Arial, Helvetica, sans-serif;
+    overflow: auto;
+    width: 100%;
+/*    background-color: #0c0032;
+    background-image: url('banner.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-size: cover;*/
+}
+
+  /*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);*/
+*:focus {
+  outline: none;
+}
+
+/*body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+*/
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+/*
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+*/
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  background: url('https://goo.gl/YbktSj');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #32508E;
+}
+
+button.social-signin.twitter {
+  background: #55ACEE;
+}
+
+button.social-signin.google {
+  background: #DD4B39;
+}
+</style>
+
+</html>
