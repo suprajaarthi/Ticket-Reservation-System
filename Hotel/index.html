@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="image/favicon.png" type="image/png">
+
+        <title>Hotel Booking</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        <!--================Header Area =================-->
+        <header class="header_area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="index.html"><img src="image/Logo.png" alt="" width="65"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+                             <li class="nav-item"><a class="nav-link" href="#room-type">Room Types</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        </ul>
+                    </div> 
+                </nav>
+            </div>
+        </header>
+        <!--================Header Area =================-->
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="booking_table d_flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h6>Hotel Booking</h6>
+						<h2 class="header-text">Relax Your Mind</h2>
+						<p>Find the perfect place to stay at an amazing price in 191 countries <br>
+                        We are back in the post-pandemic world with a bouquet of hotels across Indian cities ranging from leisure to business ones with a new outlook</p>
+						<a href="#room-type" class="btn theme_btn button_hover">Book Now</a>
+					</div>
+				</div>
+            </div>
+            <section id="#booking">
+            <div class="hotel_booking_area position">
+                <div class="container">
+                    <div class="hotel_booking_table">
+                        <div class="col-md-3">
+                            <h2>Book<br> Your Room</h2>
+                        </div>
+                        <form id='hotel-form'>
+                        <div class="col-md-9">
+                            <div class="boking_table">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker11'>
+                                                    <input type='text' id='checkin' class="form-control" placeholder="Checkin Date" required/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker1'>
+                                                    <input type='text' id="checkout" class="form-control" placeholder="Checkout Date" required/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="input-group">
+                                                <select id="dropdown1" class="wide" required>
+                                                    <option data-display="Adult Peoples">Adult Peoples</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                                                                        <option value="4">4</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="input-group">
+                                                <select id="dropdown2" class="wide">
+                                                    <option data-display="Child">Child</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="input-group">
+                                                <select id="dropdown3" class="wide" required>
+                                                    <option  data-display="Room Size">Number of Rooms</option>
+                                                    <option value="Superior">Superior</option>
+                                                    <option value="Deluxe">Deluxe</option>
+                                                    <option value="VIP">VIP</option>
+                                                </select>
+                                            </div>
+
+                                                     <input onclick="myAlert()" class="btn btn-outline-warning my-2 my-sm-0 ml-2"  type="submit" />  
+                                                  <!--    <script>
+                                                         function myAlert()
+                                                         {
+                                                            alert("Thanks for submitting your details");
+                                                         }
+                                                     </script> -->
+</section>
+
+                                               <!-- <button  class="btn btn-outline-warning my-2 my-sm-0 ml-2" onclick="submit()" type="submit">Submit</button> -->
+ <!-- <a class="book_now_btn button_hover" href="#">Book Now</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </section>
+        <!--================Banner Area =================-->
+    
+        <!--================ Accomodation Area  =================-->
+        <section id="room-type" class="accomodation_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color header-text">Book Now </h2>
+                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
+                </div>
+                <div class="row mb_30 justify-content-center">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="image/banner/superior/kamarsuperior.jpg" alt="" width="270" height="270" style="border-radius: 20px; box-shadow: 2px 1px 10px rgb(211, 211, 211);">
+                                <a  href="#booking" onclick="bookhotel1()" class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <div class="d-flex justify-content-between facilitas-show">
+                                <div class="details-container">
+                                    <img src="image/check-square.svg" alt="tick" class="list-icon">
+                                    <p class="list-text" style="font-size: 13px;">2/3 Persons</p>
+                                </div>
+                                <div class="details-container" style="cursor: pointer;"  onclick="createAlert('','Third Class','AIR CONDITIONING/ TV / WELCOME SNACKS & DRINKS','success',true,true,'pageMessages1');">
+                                    <img src="image/svgviewer-output.svg" alt="tick" class="list-icon">
+                                    <p class="list-text" style="font-size: 13px;">Show Facilities</p>
+                                </div>
+                            </div>
+                            <div id="pageMessages1">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4 header-text" style="font-size: 24px;">Superior Room</h4></a>
+                            <h5>799.000<small>.-/ ₹</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="image/banner/delux/deluxedoubel.jpg"  alt="" width="270" height="270" style="border-radius: 20px; box-shadow: 2px 1px 10px rgb(211, 211, 211);">
+                                <a  href="#booking" onclick="bookhotel2()"  class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <div class="d-flex justify-content-between facilitas-show">
+                                <div class="details-container">
+                                    <img src="image/check-square.svg" alt="tick" class="list-icon">
+                                    <p class="list-text" style="font-size: 13px;">Upto 5 People</p>
+                                </div>
+                                <div class="details-container" style="cursor: pointer;"  onclick="createAlert('','Second Class','AIR CONDITIONING/ Wifi / TV / Buffet Breakfast / Campfire','success',true,true,'pageMessages2');">
+                                    <img src="image/svgviewer-output.svg" alt="tick" class="list-icon">
+                                    <p class="list-text" style="font-size: 13px;">Show Facilities</p>
+                                </div>
+                            </div>
+                            <div id="pageMessages2">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4 header-text" style="font-size: 24px;">Deluxe Room</h4></a>
+                            <h5>999.000<small>.-/ ₹</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="image/banner/vip/fasilitasvip.jpg" alt="" width="270" height="270" style="border-radius: 20px; box-shadow: 2px 1px 10px rgb(211, 211, 211);">
+                                <a href="#booking"  onclick="bookhotel3()"  class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <div class="d-flex justify-content-between facilitas-show">
+                                <div class="details-container">
+                                    <img src="image/check-square.svg" alt="tick" class="list-icon">
+                                    <p class="list-text" style="font-size: 13px;">7 adults + 3 children</p>
+                                </div>
+                                <div class="details-container" id="facilitas" style="cursor: pointer;"  onclick="createAlert('','First Class','AIR CONDITIONING/ Refrigerator /TV / Modern Kitchen / Buffet Breakfast + Dinner / Private SwimmingPool','success',true,true,'pageMessages3');">
+                                    <img src="image/svgviewer-output.svg" alt="tick" class="list-icon">
+                                    <p class="list-text" style="font-size: 13px;">Show Facilities</p>
+                                </div>
+                            </div>
+                            <div id="pageMessages3">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4 header-text" style="font-size: 24px;">VIP Room</h4></a>
+                            <h5>1499<small>.-/ ₹</small></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Accomodation Area  =================-->
+        
+        <!--================ Facilities Area  =================-->
+        <section id="facilities" class="facilities_area section_gap">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
+            </div>
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_w header-text">Hotel Facilities</h2>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-dinner"></i>Dinner Room</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-bicycle"></i>Wide Environment</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-laptop-phone"></i>Wifi Access</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-apartment"></i>Comfortable Room
+                            </h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-user"></i>Meeting Room</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-coffee-cup"></i>Complete Facilities                            </h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Facilities Area  =================-->
+        
+        <!--================ About History Area  =================-->
+        <section id="about-us" class="about_history_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content ">
+                            <h2 class="title title_color header-text">About Us <br>Our History<br>Mission & Vision</h2>
+                            <p> Hotel is one of the Representative hotels in Simpang Empat, West Pasaman Regency which is closest to the City Center, and the West Pasaman Regional Government Complex.
+                                We provide several types of rooms, including VIP, Deluxe and Superior rooms, the types of rooms that we provide have different atmospheres and characteristics, so it really supports you to feel comfortable in all the rooms we provide.</p>
+                            <a  href="#room-type" class="button_hover theme_btn_two">Ready to book</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="image/img/slider/bangunan2.JPG" alt="img" style="box-shadow: 0px 1px 10px black;">
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--================ About History Area  =================-->
+        
+        <!--================ Testimonial Area  =================-->
+        <section class="testimonial_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color header-text">Testimonial from our Clients</h2>
+                    <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
+                </div>
+                <div class="testimonial_slider owl-carousel">
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Dinesh Kannan</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Lakshmi Priya</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Surya Prakash</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Joseph Aaron</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Testimonial Area  =================-->
+         <section id="contact" class="contact_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color header-text">Location of the hotel</h2>
+                </div>
+
+                <div class="mb-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31146.456664604953!2d80.1697589356193!3d12.62784850697747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3badaaea6eaaaaab%3A0x5a067075e4ac27d!2sChariot%20Beach%20Resort!5e0!3m2!1sen!2sin!4v1679479076631!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8156660.456179673!2d99.19359649642541!3d-3.412372749421002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302a7c6d7c8dfca5%3A0xbd3da98fbaf3e7ef!2sHotel%20Al%20-Istiqomah!5e0!3m2!1sid!2sid!4v1652864755283!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>Operations Manager</h6>
+                                <p>Subbaiah Babu</p>
+                                <p>Mobile: +91-9444002202</p>
+                            </div>
+                          <!--   <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6>Director Of Marketing</h6>
+                                <p>Ashok Krishnan</p>
+                                <p>Mobile: +91-9444002201</p>
+                            </div> -->
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">sales@chariotresorts.com</a></h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <form class="row contact_form" id="contactForm" novalidate="novalidate">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button onclick="myFunction()" type="submit" value="submit" class="btn theme_btn button_hover">Send Message</button>
+                                <script type="text/javascript">
+
+                                   function myFunction()
+                                   {
+                                    msgname=document.getElementById('name').value;
+                                    msgmail= document.getElementById('email').value;
+                                    msgsubject=document.getElementById('subject').value;
+                                    msgmsg=document.getElementById('message').value;
+                                    console.log(msgmail);
+                                    if (msgname != "" && msgmail !="" && msgsubject !="" && msgmsg !="")
+                                    {
+                                    alert("Thanks for your message")
+                                    }
+                                    else{
+                                    alert("Pls enter all the details");
+                                    }
+                                   }
+                                   function bookhotel1()
+                                   {
+
+                                    alert("Booked Superior Room Successfully");
+                                      alert("Kindly enter all your details");
+                                      // location.href="#booking";
+                                   }
+                                    function bookhotel2()
+                                   {
+                                    alert("Booked Deluxe Room Successfully");
+                                      alert("Kindly enter all your details");
+                                   }
+                                    function bookhotel3()
+                                   {
+                                    alert("Booked VIP Room Successfully");
+                                      alert("Kindly enter all your details");
+                                   }
+                                </script>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ start footer Area  =================-->	
+        <footer class="footer-area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">About Agency</h6>
+                            <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">Navigation Links</h6>
+                            <div class="row">
+                                <div class="col-4">
+                                    <ul class="list_style">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Service</a></li>
+                                        <li><a href="#">Facilitas</a></li>
+                                        <li><a href="#">Room and class</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <ul class="list_style">
+                                        <li><a href="#">Tel: Telp. (0753) 65718</a></li>
+                                        <li><a href="#">Reservation. (0753) 65718</a></li>
+                                        <li><a href="#">sales@chariotresorts.com</a></li>
+                                    </ul>
+                                </div>										
+                            </div>							
+                        </div>
+                    </div>							
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">Newsletter</h6>
+                            <p>For business professionals caught between high OEM price and mediocre print and graphic output, </p>		
+                            <div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                    <div class="input-group d-flex flex-row">
+                                        <input id="nlemail" name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <button onclick="newsletter()" class="btn sub-btn"><span class="lnr lnr-location"></span></button>	
+                                        <script type="text/javascript">
+
+                                            function newsletter() {
+                                                nlemail=document.getElementById("nlemail").value;
+                                                console.log(nlemail);
+                                                if(nlemail !='')
+                                                { 
+                                                alert("Thanks for subscribing");
+                                            }
+                                            else
+                                            {
+                                                 alert("Kindly enter your emailid");
+                                            }
+                                            }
+                                        </script>	
+                                    </div>									
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>		
+                </div>
+                <div class="border_line"></div>
+                <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> reserved Hotel  | by <span class="header-text"><a href="www.hilfideveloper.com">Hilfideveloper</a></span></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="col-lg-4 col-sm-12 footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		<!--================ End footer Area  =================-->
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="js/custom.js"></script>
+        <!-- <script type="text/javascript " src="../multival.js"></script> -->
+
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+        <script>
+            console.log("Hello");
+    var config = {
+    apiKey: "AIzaSyAi9tBGcAb65ALUMf8rx3F8hC_-Cb9ZBRw",
+    authDomain: "hotel-multi.firebaseapp.com",
+    databaseURL: "https://hotel-multi-default-rtdb.firebaseio.com",
+    projectId: "hotel-multi",
+    storageBucket: "hotel-multi.appspot.com",
+    messagingSenderId: "663745625531",
+    appId: "1:663745625531:web:1ada8df5190b0a948f989e"
+  };
+
+firebase.initializeApp(config);
+var database = firebase.database();
+
+
+// const paragraph = document.querySelector('p');
+firebase.database().ref('hotel').on('child_added', (snapshot) => {
+  const values = snapshot.val();
+
+  // paragraph.textContent += `${values.dropdown1} - ${values.dropdown2} - ${values.dropdown3}\n`;
+});
+
+
+var hotel= document.getElementById('hotel-form');
+
+hotel.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  
+  var checkin = document.getElementById("checkin").value;
+  var checkout     = document.getElementById("checkout").value;
+  
+   const dropdown1 = document.querySelector('#dropdown1').value;
+  const dropdown2 = document.querySelector('#dropdown2').value;
+  const dropdown3 = document.querySelector('#dropdown3').value;
+
+ console.log(checkin);
+  console.log(dropdown3);
+  // location.href = "availabletrain.html";
+  // Store the form data in Firebase
+  database.ref('hotel').push({
+    checkout : checkout, 
+    checkin  : checkin,
+    dropdown1 : dropdown1,
+    dropdown2 : dropdown2,
+    dropdown3 : dropdown3
+  });
+});
+
+        
+            function createAlert(title, summary, details, severity, dismissible, autoDismiss, appendToId) {
+                var iconMap = {
+                    info: "fa fa-info-circle",
+                    success: "fa fa-thumbs-up",
+                    warning: "fa fa-exclamation-triangle",
+                    danger: "fa ffa fa-exclamation-circle"
+                };
+
+                var iconAdded = false;
+
+                var alertClasses = ["alert", "animated", "flipInX"];
+                alertClasses.push("alert-" + severity.toLowerCase());
+
+                if (dismissible) {
+                    alertClasses.push("alert-dismissible");
+                }
+
+                var msgIcon = $("<i />", {
+                    "class": iconMap[severity] // you need to quote "class" since it's a reserved keyword
+                });
+
+                var msg = $("<div />", {
+                    "class": alertClasses.join(" ") // you need to quote "class" since it's a reserved keyword
+                });
+
+                if (title) {
+                    var msgTitle = $("<h4 />", {
+                    html: title
+                    }).appendTo(msg);
+                    
+                    if(!iconAdded){
+                    msgTitle.prepend(msgIcon);
+                    iconAdded = true;
+                    }
+                }
+
+                if (summary) {
+                    var msgSummary = $("<strong />", {
+                    html: summary
+                    }).appendTo(msg);
+                    
+                    if(!iconAdded){
+                    msgSummary.prepend(msgIcon);
+                    iconAdded = true;
+                    }
+                }
+
+                if (details) {
+                    var msgDetails = $("<p />", {
+                    html: details
+                    }).appendTo(msg);
+                    
+                    if(!iconAdded){
+                    msgDetails.prepend(msgIcon);
+                    iconAdded = true;
+                    }
+                }
+                
+
+                if (dismissible) {
+                    var msgClose = $("<span />", {
+                    "class": "close", // you need to quote "class" since it's a reserved keyword
+                    "data-dismiss": "alert",
+                    html: "<i class='fa fa-times-circle'></i>"
+                    }).appendTo(msg);
+                }
+                
+                $('#' + appendToId).prepend(msg);
+                
+                if(autoDismiss){
+                    setTimeout(function(){
+                    msg.addClass("flipOutX");
+                    setTimeout(function(){
+                        msg.remove();
+                    },1000);
+                    }, 5000);
+                }
+            }
+
+        </script>
+    </body>
+</html>

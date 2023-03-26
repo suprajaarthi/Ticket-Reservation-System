@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+<div class="container" ng-app="myApp" ng-controller="Example">
+        <div class="jumbotron">
+                        <h2>CSV to HTML table</h2>
+                        <p>As I visit a company website allowing me to download a <code>CSV</code> file (Comma Seperated Value), I find myself thinking: Why do they not draw a graph of the data? This is the first part on my way to make a CSV-Graph webpage, where I in this part convert the CSV file into a data structure. <br />And just to see if it is working I convert the array to a Boostrap table. <br />You may change the CSV data, and also feel free to reuse the <code>csvToHtml</code> function build in javascript.</p>
+        </div>
+        <div class="container">
+                <div class="row">
+
+                        <div class="col-md-12">
+                                <textarea cols="30" rows="10" class="source">Kundenavn;Opstillingsadressenr.;Navn;Adresse;Postnr;By;År;Måned;Waste code;Waste code beskrivelse;Mængde/kg
+Kundenavn;12345678;Kundenavn;Adresse;postnr;Bynavn;2015;1;E03;Forbrændingsegnet;220
+Kundenavn;12345678;Kundenavn;Adresse;postnr;Bynavn;2015;2;E03;Forbrændingsegnet;210
+Kundenavn;12345678;Kundenavn;Adresse;postnr;Bynavn;2015;3;E03;Forbrændingsegnet;210
+Kundenavn;12345678;Kundenavn;Adresse;postnr;Bynavn;2015;4;E03;Forbrændingsegnet;240
+Kundenavn;12345678;Kundenavn;Adresse;postnr;Bynavn;2015;5;E03;Forbrændingsegnet;240
+Kundenavn;12345678;Kundenavn;Adresse;postnr;Bynavn;2015;6;E03;Forbrændingsegnet;220</textarea>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="output"></div>
+                        </div>
+                        <div class="col-md-12"></div>
+                </div>
+        </div>
+</div>
+</body>
+</html>

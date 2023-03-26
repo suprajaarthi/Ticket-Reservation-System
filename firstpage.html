@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
 	<head>
+        <title>Make My Journey</title>
     <!-- for-mobile-apps -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#25274d">
-    <meta name="description" content="A Train seat reservation system ">
+    <meta name="description" content="Make My Journey">
     <meta name="author" content="James Muriitih">
     <meta name="keywords" content="bus,bus seats,">
     <meta property="og:site_name" content="google.com">
@@ -26,7 +26,7 @@
     <meta name="msapplication-TileColor" content="#2b5797" />
 
     <!-- //for-mobile-apps -->
-    <title>Train Seat Reservation System</title>
+    <title>Make My Journey</title>
     <!-- icons -->
     <link rel="icon" type="image/png" href="images/logo-96.png" sizes="96x96" />
     <link rel="icon" type="image/png" href="images/logo-16.png" sizes="16x16" />
@@ -68,12 +68,13 @@
             <a class="navbar-brand" href="index.html">
                 <h1>
                     <img src="images/p1.png" alt="logo" width="120" height="55" style="margin-top: -10px">
-                    <span>T</span>
-                    <span>R</span>
-                    <span>A</span>
-                       <span>I</span>
+                   <span>J</span>
+                    <span>O</span>
+                    <span>U</span>
+                       <span>R</span>
                          <span>N</span>
-                 
+                            <span>E</span>   
+                            <span>Y</span>
                 </h1>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,9 +106,11 @@
         <div class="col-md-11 col-lg-9 col-xl-8 mx-auto window">
        <section class="stepper">
                 <ul id="progressbar" style="padding-inline-start:8px;">
-                    <a href="firstpage.html"> <li  class="active">Passenger Details</li> </a>
-                    <a href="availabletrain.html"> <li> Train Details</li> </a>
-                    <a href="fetch.html"> <li> Ticket</li> </a>
+                <a href="firstpage.html"> <li  class="active">Passenger Details</li> </a>
+                <a href="Hotel/index.html" target="_blank"> <li> Reserve Hotel &nbsp; &nbsp; &nbsp;</li> </a>                    
+                <a href="food.html" target="_blank"> <li>  Order Food &nbsp; &nbsp; &nbsp;</li> </a>
+                <a href="Cab/index.html" target="_blank" > <li> Book Cab</li> </a>
+                <a href="fetch.html"> <li> Ticket </li> </a>
                 </ul>
             </section> 
             <section class="body">
@@ -116,7 +119,9 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="dropdown1">From</label>
-                                <select  id="dropdown1" class="form-control from " name="from" required>
+                                <input type="text"   id="dropdown1"  class="form-control" name="from" placeholder="Chennai" id="from" required>
+
+                               <!--  <select  id="dropdown1" class="form-control from " name="from" required>
                                     <option disabled>--PickUp Point--</option>
                                     <option value="Chennai">Chennai</option>
                                     <option value="Coimbatore">Coimbatore</option>
@@ -124,30 +129,22 @@
                                       <option value="Salem">Salem</option>
                                     <option value="Tirunelveli">Triunelveli</option> 
                                      <option value="Dindugal">Dindugal</option>
-                                </select>
+                                </select> -->
 
                                 <!-- <p id="selected-option">hh</p> -->
 
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="dropdown2">To</label>
-                                <select  id="dropdown2" class="form-control from " name="from" required>
-                                    <option disabled>--Destination Point--</option>
-                                    <option value="Coimbatore">Coimbatore</option>
-                                    <option value="Chennai">Chennai</option>
-                                    <option value="Madurai">Madurai</option>
-                                      <option value="Salem">Salem</option>
-                                    <option value="Tirunelveli">Triunelveli</option> 
-                                     <option value="Dindugal">Dindugal</option>
-                                    
+                                <input   id="dropdown2"  type="text" class="form-control" name="to" placeholder="Bombay" id="to" required>
 
-                                </select>
-                                                            </div>
+                          </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Date of travel</label>
-                                <input type="text" class="form-control" id="date" name="date" value="2023-03-04" placeholder="2023-03-04" required>
+                                <input type="date" class="form-control" 
+                                 value="2023-03-04" placeholder="2023-03-04" required>
                             </div>
                              <div class="form-group col-md-6">
                                 <label>Total passengers</label>
@@ -155,19 +152,21 @@
                                  oninput="updatePrice()">
                             </div> 
                             <div class="form-group col-md-6 ">
-                                <label for="dropdown3">Time</label>
-                                <select id="dropdown3" class="form-control time " name="time " required>
+                                <label for="dropdown3">Checkin Time</label>
+                                <input type="time"  id="dropdown3"  class="form-control"  id="appointment-time" name="appointment-time">
+
+                            <!--     <select id="dropdown3" class="form-control time " name="time " required>
                                             <option disabled>--Time--</option>
                                             <option value="08:00">08:00</option>
                                             <option value="19:00">19:00</option>
                                             <option value="22:00 ">22:00</option>
-                                        </select>
+                                        </select> -->
                             </div> 
                                     
 
                                         <div class="form-group col-md-6">
                                 <label>Standard Price</label>
-                                <input type="text" class="form-control" id="price" value="250" name="price" readonly required>
+                                <input type="text" class="form-control" id="price" value="1250" name="price" readonly required>
                             </div>                
 
                         </div>
@@ -180,15 +179,17 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="adhar">Adhar Number</label>
-                                <input type="number" class="form-control" name="adhar" placeholder="631890872134" 
+                                <input type="number" onblur="validateCardNumber()"  class="form-control" name="adhar" placeholder="631890872134" 
                                  id="adhar" required>
                             </div>
                                                   </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="phone">Mobile No.</label>
-                                <input type="number" class="form-control" id="phone" name="phone" id="phone" placeholder="9677301246"  required>
+                                <input type="number" class="form-control" id="phone" name="phone" id="phone" placeholder="9677301246" onblur="validateMobileNumber()" required>
                             </div>
+                            <!-- <input type="text" id="mobile-number" name="mobile-number" onblur="validateMobileNumber()"> -->
+                        
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="aravind@gmail.com" required>
@@ -199,6 +200,8 @@
 
      <div class="row justify-content-center buttons">
         <a href="index.html">
+            <span id="mobile-number-error" style="color:red;"></span>
+
          <input class="btn btn-outline-warning my-2 my-sm-0 ml-2"  type="submit" />  
 
     <!-- <button  class="btn btn-outline-warning my-2 my-sm-0 ml-2" onclick="submit()" type="submit">Submit</button> -->
@@ -232,18 +235,37 @@
 <script>
    
 </script>
-<script>
-  // function submit()
-  // {
-  //   location.href = "availabletrain.html";
+<script>                              
+function validateMobileNumber() {
+  const mobileNumber = document.getElementById("phone").value;
+  const mobileNumberRegex = /^[0-9]{10}$/; // regular expression for 10 digit mobile number
+  const errorSpan = document.getElementById("mobile-number-error");
+  if (!mobileNumberRegex.test(mobileNumber)) {
+    errorSpan.textContent = "Please enter a valid 10-digit mobile number.";
+  } else {
+    errorSpan.textContent = "";
+    // do something with the valid mobile number
+  }
+}
+          
+function validateCardNumber() {
+  const cardNumber = document.getElementById("adhar").value;
+  const cardNumberRegex = /^\d{16}$/; // regular expression for 16-digit card number
+  const errorSpan = document.getElementById("mobile-number-error");
+  if (!cardNumberRegex.test(cardNumber)) {
+    errorSpan.textContent = "Please enter a valid 16-digit Adhar number.";
+  } else {
+    errorSpan.textContent = "";
+    // do something with the valid card number
+  }
+}
 
-  // }
-    function updatePrice() {
+function updatePrice() {
   // Get the value of the age input field
   var age = document.getElementById("passenger").value;
   // console.log(age);
   // Calculate the price
-  var price = age * 250;
+  var price = age * 1250;
 
   // Update the value of the price input field
   document.getElementById("price").value = price;
